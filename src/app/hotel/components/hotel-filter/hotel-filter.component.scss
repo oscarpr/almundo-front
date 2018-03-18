@@ -1,0 +1,73 @@
+@import "./../../../../scss/variables";
+
+$container-background: $gray-color;
+$item-background: $white-color;
+
+.hotel-filter__container {
+    background: $container-background;
+
+    .hotel-filter__header, .hotel-filter__item {
+        margin-bottom: 4px;
+        background: $item-background;
+   
+    }
+
+    .hotel-filter__header {
+        height: 2.5em;
+
+        h4 {
+            line-height: 2.5;
+            margin: 0;
+        }
+    }
+
+    .hotel-filter__item {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        .hotel-filter__item-header {
+            height: 2em;
+            color: $auxiliar-color;
+
+            i.icon-caret-up, i.icon-caret-down {
+                float: right;
+            }
+
+            i:before {
+                color: $auxiliar-color;
+                font-size: $subtitle-font-size;
+            }
+
+            & > * {
+                display: inline-block;
+            }
+
+            p {
+                margin: 0 0 0 0.2em;
+            }
+        }
+
+        &.hotel-filter__item-hotel-name {
+            .hotel-filter__item-content {
+                padding-right: 1em;
+
+                input {
+                    width: 56%;
+                }
+
+                button {
+                    float: right;
+                }
+            }
+        }
+
+        .hotel-filter__item-content {
+            &.hotel-filter__stars {
+                .hotel-filter__stars-item {
+                    margin-bottom: 6px;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

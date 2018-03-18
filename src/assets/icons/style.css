@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?l9p1j7');
-  src:  url('fonts/icomoon.eot?l9p1j7#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?l9p1j7') format('truetype'),
-    url('fonts/icomoon.woff?l9p1j7') format('woff'),
-    url('fonts/icomoon.svg?l9p1j7#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6zxtrd');
+  src:  url('fonts/icomoon.eot?6zxtrd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6zxtrd') format('truetype'),
+    url('fonts/icomoon.woff?6zxtrd') format('woff'),
+    url('fonts/icomoon.svg?6zxtrd#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-caret-down:before {
+  content: "\e913";
+}
+.icon-caret-up:before {
+  content: "\e914";
+}
+.icon-search:before {
+  content: "\e911";
+}
+.icon-star:before {
+  content: "\e912";
+}
 .icon-bathrobes:before {
   content: "\e900";
   color: #606060;

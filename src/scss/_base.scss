@@ -1,0 +1,81 @@
+$buttons-background: $secundary-color;
+$buttons-font-color: $white-color;
+
+$subtitles-font-color: $auxiliar-color;
+
+$body-background-color: $gray-color;
+
+$card-background: $white-color;
+
+$star-icons-color: $yellow-color;
+
+$card-box-shadow: 2px 2px 3px -3.5px;
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: $body-background-color;
+}
+
+.card {
+    background: $card-background;
+    box-shadow: $card-box-shadow;
+    -webkit-box-shadow: $card-box-shadow;
+    -moz-box-shadow: $card-box-shadow;
+    -o-box-shadow: $card-box-shadow;
+}
+
+input {
+    font-size: 13px;
+    padding: 5px;
+    border-radius: 2px;
+    border-width: 1px;
+}
+
+.form-group {
+    height: 2em;
+
+    & > * {
+        height: 100%;
+    }
+}
+
+.border-bottom-solid-4 {
+    border-bottom: 4px solid $body-background-color;
+}
+
+.primary-button {
+    border-color: transparent;
+    background: $buttons-background;
+    color: $buttons-font-color;
+    font-size: 14px;
+    border-bottom: 2px solid black;
+    border-radius: 3px;
+}
+
+i.icon-star:before {
+    color: $star-icons-color;
+}
+
+
+.title {
+    font-size: $title-font-size;
+    margin: 0;
+}
+
+.subtitle {
+    color: $subtitles-font-color;
+    font-size: $subtitle-font-size;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dark-text {
+    font-size: $dark-text-font-size;
+    color: black;
+    font-weight: bold;
+}

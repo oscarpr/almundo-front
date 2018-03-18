@@ -1,0 +1,26 @@
+@import "./../assets/icons/style.css";
+@import "./../scss/application";
+
+$main-nav-background: $primary-color;
+$main-nav-border-bottom-color: $primary-color-light;
+
+.principal {
+    .principal__nav-container {
+        height: 5em;
+        background: $main-nav-background;
+        border-bottom: 2px solid $main-nav-border-bottom-color;
+
+        nav {
+            line-height: 5;
+            padding-left: 0.5em;
+
+            & * {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .principal__main-container {
+        padding-top: 1.5em;
+    }
+}
