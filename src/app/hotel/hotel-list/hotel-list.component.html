@@ -5,34 +5,36 @@
 	</section>
 
 	<section class="col-12 col-md-9 hotel-list__hotels">
-		<article class="card hotel-list__hotel row" *ngFor="let hotel of hotels">
-			<div class="col-12 col-md-3 hotel__image-container">
-				<img class="image-responsive" [src]="BASE_URL + 'images/' + hotel.image " alt="{{hotel.name}}">
-			</div>
-			<div class="col-12 col-md-6 hotel__main-info">
-				<h4 class="title">{{hotel.name}}</h4>
-				<p class="stars-container">
-					<i class="icon-star" *ngFor="let star of (hotel.stars | arrayFromNumber)"></i>
-				</p>
-				<p class="amenities-container">
-					<i [class]="'icon-' + amenitie" *ngFor="let amenitie of hotel.amenities "></i>
-				</p>
-			</div>
-			<div class="col-12 col-md-3 hotel__extra-info">
-				<div class="hotel__extra-info-price">
-					<p class="dark-text">Precio por noche por habitación</p>
-					<p class="price-container">
-						<span class="label">ARS</span>
-						<span class="price">
-							{{hotel.price | number:'1.0-0':'ar'}}
-						</span>
+		<div class="container-fluid">
+			<article class="card hotel-list__hotel row" *ngFor="let hotel of hotels">
+				<div class="col-12 col-md-3 hotel__image-container">
+					<img class="image-responsive" [src]="BASE_URL + 'images/' + hotel.image " alt="{{hotel.name}}">
+				</div>
+				<div class="col-12 col-md-6 hotel__main-info">
+					<h4 class="title">{{hotel.name}}</h4>
+					<p class="stars-container">
+						<i class="icon-star" *ngFor="let star of (hotel.stars | arrayFromNumber)"></i>
 					</p>
-					<div class="button-container">
-						<button class="primary-button">Ver hotel</button>
+					<p class="amenities-container">
+						<i [class]="'icon-' + amenitie" *ngFor="let amenitie of hotel.amenities "></i>
+					</p>
+				</div>
+				<div class="col-12 col-md-3 hotel__extra-info">
+					<div class="hotel__extra-info-price">
+						<p class="dark-text">Precio por noche por habitación</p>
+						<p class="price-container">
+							<span class="label">ARS</span>
+							<span class="price">
+								{{hotel.price | number:'1.0-0':'ar'}}
+							</span>
+						</p>
+						<div class="button-container">
+							<button class="primary-button">Ver hotel</button>
+						</div>
 					</div>
 				</div>
-			</div>
-		</article>
+			</article>
+		</div>
 	</section>
 
 </section>

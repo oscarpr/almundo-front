@@ -1,13 +1,17 @@
 @import "./../assets/icons/style.css";
 @import "./../scss/application";
 
-$main-nav-background: $primary-color;
-$main-nav-border-bottom-color: $primary-color-light;
+$main-nav-background: radial-gradient(ellipse, $primary-color-light, $primary-color);
+$main-nav-border-bottom-color: $primary-color-lighter;
+
+$variable: $primary-color, $primary-color-lighter;
 
 .principal {
     .principal__nav-container {
         height: 5em;
+        background-position: center center;
         background: $main-nav-background;
+
         border-bottom: 2px solid $main-nav-border-bottom-color;
 
         nav {
