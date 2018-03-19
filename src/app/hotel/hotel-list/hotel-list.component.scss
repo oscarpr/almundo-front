@@ -73,3 +73,12 @@ $hotel-name-color: $auxiliar-color;
         }
     }
 }
+
+@media (max-width: $mobile-width) {
+    .hotel-list__container {
+        .hotel-list__filter {
+            padding: 0;
+            margin-bottom: 2em;
+        }
+    }
+}

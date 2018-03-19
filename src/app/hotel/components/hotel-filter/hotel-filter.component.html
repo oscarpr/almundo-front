@@ -1,7 +1,8 @@
 <article class="container-fluid hotel-filter__container card">
-    <div class="row">
+    <div class="row" [@responsiveState]="responsiveState">
         <div class="hotel-filter__header col-12">
-            <h4 class="title">Filtros</h4>
+            <h4 class="title" (click)="toggleResponsiveState()"></h4>
+            <i [ngClass]="{'icon-caret-up': responsiveState === 'shown', 'icon-caret-down': responsiveState === 'hidden'}" (click)="toggleResponsiveState()"></i>
         </div>
 
         <div class="hotel-filter__item col-12 hotel-filter__item-hotel-name" [@filterState]="filtersState['nameFilter']">

@@ -1,3 +1,4 @@
+import { MOBILE_WIDTH } from './../../../../environments/environment.prod';
 import { FilterAction, FILTER_CHANGE } from './../../../reducers/filters.reducer';
 import { Observable } from 'rxjs/Observable';
 import { AppState } from './../../../app-state';
@@ -25,6 +26,17 @@ export interface ISelectedFilters {
 			})),
 			transition('hidden => shown', animate('100ms ease-in')),
 			transition('shown => hidden', animate('100ms ease-out'))
+		]),
+		trigger('responsiveState', [
+			state('shown', style({
+				height: 'auto'
+			})),
+			state('hidden', style({
+				height: '2.5em',
+				overflowY: 'hidden'
+			})),
+			transition('hidden => shown', animate('100ms ease-in')),
+			transition('shown => hidden', animate('100ms ease-out'))
 		])
 	],
 	changeDetection: ChangeDetectionStrategy.OnPush
@@ -35,14 +47,30 @@ export class HotelFilterComponent implements OnInit {
 		nameFilter: 'shown',
 		starsFilter: 'shown'
 	};
-
 	selectedFilters$: Observable<ISelectedFilters>;
+	responsiveState: string = 'shown';
+
+	isMobile: boolean;
 
 	constructor(private store: Store<AppState>) {
 		this.selectedFilters$ = store.pipe(select('hotelFilter'));
+
+		this.isMobile = window.outerWidth <= MOBILE_WIDTH;
+
+		if (this.isMobile) {
+			this.responsiveState = 'hidden';
+		}
+
 	}
 
 	ngOnInit() { }
+
+
+	toggleResponsiveState(): void {
+		if (this.isMobile) {
+			this.responsiveState = this.responsiveState === 'shown' ? 'hidden' : 'shown';
+		}
+	}
 
 
 	toggleFilterState(filter: string): void {
@@ -77,7 +105,7 @@ export class HotelFilterComponent implements OnInit {
 			type: FILTER_CHANGE,
 			filter: filter
 		}
-		
+
 		this.store.dispatch(filterChangeAction);
 	}
 

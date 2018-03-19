@@ -11,7 +11,6 @@ $variable: $primary-color, $primary-color-lighter;
         height: 5em;
         background-position: center center;
         background: $main-nav-background;
-
         border-bottom: 2px solid $main-nav-border-bottom-color;
 
         nav {
@@ -26,5 +25,13 @@ $variable: $primary-color, $primary-color-lighter;
 
     .principal__main-container {
         padding-top: 1.5em;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .principal {
+        .principal__main-container {
+            padding-top: 0;
+        }
     }
 }

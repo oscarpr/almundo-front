@@ -17,6 +17,10 @@ $item-background: $white-color;
         h4 {
             line-height: 2.5;
             margin: 0;
+
+            &:after {
+                content: 'Filtros';
+            }
         }
     }
 
@@ -67,6 +71,28 @@ $item-background: $white-color;
                     margin-bottom: 6px;
                     font-size: 13px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .hotel-filter__container {
+        .hotel-filter__header {
+            text-align: center;
+            color: $auxiliar-color;
+
+            h4 {
+                display: inline-block;
+
+                &:after {
+                    content: "Filtrar";
+                }
+            }
+
+            i {
+                vertical-align: top;
+                font-size: $title-font-size;
             }
         }
     }
