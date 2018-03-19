@@ -2,6 +2,8 @@
 
 $hotel-name-color: $auxiliar-color;
 
+$price-separator: 1px dashed lightgray;
+
 .hotel-list__container {
     .hotel-list__hotels {
         .hotel-list__hotel {
@@ -40,7 +42,7 @@ $hotel-name-color: $auxiliar-color;
             }
 
             .hotel__extra-info {
-                border-left: 1px dashed lightgray;
+                border-left: $price-separator;
                 text-align: center;
                 padding: 20px;
 
@@ -79,6 +81,23 @@ $hotel-name-color: $auxiliar-color;
         .hotel-list__filter {
             padding: 0;
             margin-bottom: 2em;
+        }
+
+        .hotel-list__hotels {
+            .hotel-list__hotel {
+                .hotel__main-info {
+                    padding: 0.7em 0 0;
+
+                    & > * {
+                        margin-bottom: 1em !important;
+                    }
+                }
+
+                .hotel__extra-info {
+                    border-left: none;
+                    border-top: $price-separator;
+                }
+            }
         }
     }
 }
