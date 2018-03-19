@@ -14,6 +14,10 @@ $item-background: $white-color;
     .hotel-filter__header {
         height: 2.5em;
 
+        i {
+            visibility: hidden;
+        }
+
         h4 {
             line-height: 2.5;
             margin: 0;
@@ -91,6 +95,7 @@ $item-background: $white-color;
             }
 
             i {
+                visibility: visible;
                 vertical-align: top;
                 font-size: $title-font-size;
             }
