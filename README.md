@@ -7,6 +7,10 @@ Run `git clone https://github.com/oscarpr/almundo-front.git` to clone the projec
 
 
 ## Install
+Run `ng i` to install the project dependencies.
+
+
+## Run
 Run `ng server` to run a server that deploy the app.
 
 
