@@ -9,7 +9,6 @@ $item-background: $white-color;
     .hotel-filter__header, .hotel-filter__item {
         margin-bottom: 4px;
         background: $item-background;
-   
     }
 
     .hotel-filter__header {
@@ -39,6 +38,7 @@ $item-background: $white-color;
             }
 
             & > * {
+                cursor: pointer;
                 display: inline-block;
             }
 

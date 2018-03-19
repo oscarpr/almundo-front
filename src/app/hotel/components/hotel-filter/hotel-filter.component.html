@@ -6,33 +6,33 @@
 
         <div class="hotel-filter__item col-12 hotel-filter__item-hotel-name" [@filterState]="filtersState['nameFilter']">
             <div class="hotel-filter__item-header">
-                <i class="icon-search"></i>
-                <p class="subtitle">Nombre de hotel</p>
+                <i class="icon-search" (click)="toggleFilterState('nameFilter')"></i>
+                <p class="subtitle" (click)="toggleFilterState('nameFilter')">Nombre de hotel</p>
                 <i [ngClass]="{'icon-caret-up': filtersState['nameFilter'] === 'shown', 'icon-caret-down': filtersState['nameFilter'] === 'hidden'}"
                     (click)="toggleFilterState('nameFilter')"></i>
             </div>
 
             <div class="hotel-filter__item-content form-group">
-                <input type="text" placeholder="Ingrese el nombre del hotel">
-                <button class="primary-button">Aceptar</button>
+                <input type="text" placeholder="Ingrese el nombre del hotel" #hotelName>
+                <button class="primary-button" (click)="hotelNameFilterChange(hotelName.value)">Aceptar</button>
             </div>
         </div>
 
         <div class="hotel-filter__item col-12" [@filterState]="filtersState['starsFilter']">
             <div class="hotel-filter__item-header">
-                <i class="icon-star"></i>
-                <p class="subtitle">Estrellas</p>
+                <i class="icon-star" (click)="toggleFilterState('starsFilter')"></i>
+                <p class="subtitle" (click)="toggleFilterState('starsFilter')">Estrellas</p>
                 <i [ngClass]="{'icon-caret-up': filtersState['starsFilter'] === 'shown', 'icon-caret-down': filtersState['starsFilter'] === 'hidden'}"
                     (click)="toggleFilterState('starsFilter')"></i>
             </div>
 
             <div class="hotel-filter__item-content hotel-filter__stars">
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter('all')" [checked]="(selectedFilters$ | async).stars['all']">
                     <span class="dark-text">Todas las estrellas</span>
                 </div>
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter(5)" [checked]="(selectedFilters$ | async).stars[5]">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
@@ -40,25 +40,25 @@
                     <i class="icon-star"></i>
                 </div>
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter(4)" [checked]="(selectedFilters$ | async).stars[4]">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                 </div>
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter(3)" [checked]="(selectedFilters$ | async).stars[3]">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                 </div>
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter(2)" [checked]="(selectedFilters$ | async).stars[2]">
                     <i class="icon-star"></i>
                     <i class="icon-star"></i>
                 </div>
                 <div class="hotel-filter__stars-item">
-                    <input type="checkbox" name="stars">
+                    <input type="checkbox" name="stars" (change)="setStarFilter(1)" [checked]="(selectedFilters$ | async).stars[1]">
                     <i class="icon-star"></i>
                 </div>
 

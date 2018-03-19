@@ -6,6 +6,9 @@ import { CommonModule } from '@angular/common';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelFilterComponent } from './components/hotel-filter/hotel-filter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { hotelFilterReducer } from '../reducers/filters.reducer';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
 	{ path: '', component: HotelListComponent }
@@ -16,7 +19,9 @@ const routes: Routes = [
 		CommonModule,
 		RouterModule.forChild(routes),
 		HttpClientModule,
-		PipesModule
+		PipesModule,
+		FormsModule,
+		StoreModule.forRoot({ hotelFilter: hotelFilterReducer })
 	],
 	declarations: [HotelListComponent, HotelFilterComponent],
 	providers: [HotelService]
