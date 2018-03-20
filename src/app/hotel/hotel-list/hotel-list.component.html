@@ -8,7 +8,7 @@
 		<div class="container-fluid">
 			<article class="card hotel-list__hotel row" *ngFor="let hotel of hotels">
 				<div class="col-12 col-md-3 hotel__image-container">
-					<img class="image-responsive" [src]="BASE_URL + 'images/' + hotel.image " alt="{{hotel.name}}">
+					<img class="image-responsive" [src]="BASE_URL + 'images/' + hotel.image " alt="{{hotel.name}}" onerror="this.src = '/assets/logo/logo-almundo.svg'">
 				</div>
 				<div class="col-12 col-md-6 hotel__main-info">
 					<h4 class="title">{{hotel.name}}</h4>
